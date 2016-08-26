@@ -88,3 +88,4 @@ ENV/
 # Rope project settings
 .ropeproject
 将删除 .idea/
+*.sqlite3
