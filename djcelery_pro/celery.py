@@ -5,16 +5,11 @@ import os
 from celery import Celery
 
 # set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTING_MODULE', 'djcelery_pro.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djcelery_pro.settings')
 
 from django.conf import settings
 
-BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-
-app = Celery('djcelery_pro',
-             backend=CELERY_RESULT_BACKEND,
-             broker=BROKER_URL,)
+app = Celery('djcelery_pro')
 
 # Using a string here means the worker will not have to
 # pickle the object when using Windows.
